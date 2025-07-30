@@ -1,16 +1,28 @@
-import com.mycompany.GereEscola.Pessoa;
-
-class Derivada extends Pessoa {
-    public Derivada ( String nome , String id ) {
-        super ( nome , id );
+package com.mycompany.PctBravo;
+class Externa {
+    private String id;
+    public Externa ( ) {
+        id = "PctBravo.Externa";
+        System.out.println( "PctBravo.Externa instanciada." );
     }
-    public String getNome ( ) {
-        return recuperarNome ( );
+    public String getId () {
+       return id;
+    }
+    class Interna {  
+        public Interna ( ) {
+        id = "PctBravo.Externa.Interna";
+        System.out.println( "PctBravo.Externa.Interna instanciada." );
+        }
+        public String getId () {
+            return id;
+        }
     }
 }
-public class Principal {
-     public static void main ( String args [ ] ) {
-        Derivada Der = new Derivada ( "Marcos" , "A1" );
-        System.out.println ( Der.getNome() );
-     }
+public class Base extends Externa.Interna {
+    private String id;
+    public Base ( ) {
+        new Externa().super();
+        id="PctBravo.Base";
+        System.out.println( "PctBravo.Base instanciada." );
+    }
 }
