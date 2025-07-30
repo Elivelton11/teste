@@ -1,19 +1,16 @@
-public class Base {
-    private String linguagem = "JAVA ";
-    public void desvio (){    
-        switch ( linguagem ) {
-            case ( "C" ):
-                    System.out.println("Suporta apenas programação estruturada");
-                    break;
-            case ( "C++" ):
-                    System.out.println("Suporta programação estruturada e orientada a objeto");
-                    break;
-            case ( "JAVA "):
-                    System.out.println("Suporta apenas programação orientada a objeto");
-                    break;
-            default:
-                    System.out.println("Erro!");
-                    break;
-        }
+import com.mycompany.GereEscola.Pessoa;
+
+class Derivada extends Pessoa {
+    public Derivada ( String nome , String id ) {
+        super ( nome , id );
     }
-} 
+    public String getNome ( ) {
+        return recuperarNome ( );
+    }
+}
+public class Principal {
+     public static void main ( String args [ ] ) {
+        Derivada Der = new Derivada ( "Marcos" , "A1" );
+        System.out.println ( Der.getNome() );
+     }
+}
