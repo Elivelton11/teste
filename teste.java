@@ -1,11 +1,11 @@
-package com.mycompany.pctAlfa;
-import java.util.Random;
-public class IdUnico extends Random {
-    private Float seed;   
-    public IdUnico ( ) {
-        seed = nextFloat ();
+class Concreta extends IdUnico {
+        public void imprimeCod () {
+            System.out.println( seed );
     }
-    private interface iCodigo {
-        public void imprimeCod ();
+}      
+public class Principal {
+        public static void main(String[] args) {
+            Concreta conc = new Concreta ();
+        conc.imprimeCod();
     }
 }
